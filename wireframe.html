@@ -1,0 +1,463 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Sakshi Yoga | Wellness Beyond Yoga Mat</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&amp;family=Manrope:wght@300;400;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-tint": "#6a5b55",
+                        "surface": "#fdf9f5",
+                        "on-error": "#ffffff",
+                        "on-surface-variant": "#4e4541",
+                        "primary-container": "#4e413b",
+                        "on-secondary-container": "#735e58",
+                        "primary-fixed-dim": "#d6c3ba",
+                        "secondary-container": "#f5dad1",
+                        "secondary-fixed-dim": "#dbc1b9",
+                        "secondary-fixed": "#f8ddd4",
+                        "on-primary-container": "#bfada5",
+                        "on-primary-fixed-variant": "#51443e",
+                        "on-tertiary-fixed-variant": "#52443f",
+                        "tertiary": "#382b27",
+                        "surface-container-highest": "#e6e2de",
+                        "on-error-container": "#93000a",
+                        "inverse-on-surface": "#f4f0ec",
+                        "on-primary": "#ffffff",
+                        "surface-container": "#f1ede9",
+                        "on-secondary-fixed-variant": "#55433d",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-high": "#ebe7e4",
+                        "on-secondary-fixed": "#261813",
+                        "on-background": "#1c1c19",
+                        "outline": "#807570",
+                        "tertiary-fixed-dim": "#d6c2bc",
+                        "on-tertiary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-tertiary-container": "#c1ada8",
+                        "on-tertiary-fixed": "#241916",
+                        "primary": "#372b26",
+                        "outline-variant": "#d2c4be",
+                        "background": "#fdf9f5",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed": "#241914",
+                        "surface-container-low": "#f7f3ef",
+                        "on-surface": "#1c1c19",
+                        "primary-fixed": "#f3ded6",
+                        "surface-variant": "#e6e2de",
+                        "secondary": "#6e5a53",
+                        "tertiary-container": "#4f413d",
+                        "surface-bright": "#fdf9f5",
+                        "error-container": "#ffdad6",
+                        "inverse-surface": "#31302e",
+                        "tertiary-fixed": "#f3ded8",
+                        "inverse-primary": "#d6c3ba",
+                        "surface-dim": "#ddd9d6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "24px",
+                        "section-gap": "120px",
+                        "gutter": "24px",
+                        "margin-desktop": "80px",
+                        "unit": "8px",
+                        "container-max": "1200px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Cormorant Garamond"],
+                        "display-lg": ["Cormorant Garamond"],
+                        "headline-lg": ["Cormorant Garamond"],
+                        "label-sm": ["Manrope"],
+                        "body-md": ["Manrope"],
+                        "body-lg": ["Manrope"],
+                        "headline-lg-mobile": ["Cormorant Garamond"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "400"}],
+                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "300"}],
+                        "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.8", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .grain-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.04;
+            background-image: url("https://www.transparenttextures.com/patterns/p6.png");
+        }
+        
+        .asymmetric-clip {
+            clip-path: polygon(0 0, 100% 5%, 95% 100%, 5% 95%);
+        }
+
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .ambient-glow {
+            background: radial-gradient(circle at center, #f5dad1 0%, transparent 70%);
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden selection:bg-secondary-container selection:text-primary">
+<div class="grain-overlay"></div>
+<!-- Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md transition-all duration-500 ease-in-out">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-6 max-w-container-max mx-auto">
+<div class="flex items-center gap-2">
+<img alt="Sakshi Yoga Logo" class="h-10 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBchkveJyGBkVyMTC5GxFIgbBf9pkhhESA2qfc62LmrXDAll8_6pg0VZ60lU_0c5H-ykoox4xPc6j1_ZBnGPbL7CwQFUwe-oloO4_EmL5faS_PzITpurntJAfhxdC-4nlYWNVRUCLAjLBgCveLpPaFQ7WGk6kaho1WoLNhFB3BHOTc-cqr3ZuRyardWX3DuOudPNCXKMrdRUTBOzuJ5BCG7qbbwnzM_lz3Xfgn-g1p4Uagi9AkkIe8K5zqevcO1HawncZP9aMFRObYz">
+<span class="font-headline-md text-headline-md tracking-tight text-primary">Sakshi Yoga</span>
+</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm" href="#about">About</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm" href="#batches">Batches</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm" href="#services">Services</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm" href="#wellness">Philosophy</a>
+<button class="bg-secondary text-on-secondary px-6 py-2 font-label-sm text-label-sm hover:opacity-90 transition-opacity">Connect</button>
+</div>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="min-h-screen flex items-center pt-24 pb-12 relative overflow-hidden">
+<div class="absolute right-0 top-1/2 -translate-y-1/2 w-1/2 h-full opacity-10 ambient-glow -z-10"></div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop w-full grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-6 space-y-8 fade-in-up visible">
+<h1 class="font-display-lg text-display-lg text-primary max-w-lg">
+                    Sakshi Yoga
+                </h1>
+<p class="font-headline-md text-headline-md text-on-surface-variant italic"></p><div class="">Yoga and Mindfulness for physical, mental and spiritual health</div><p></p>
+<div class="flex flex-col sm:flex-row gap-4 pt-4">
+<button class="bg-secondary text-on-secondary px-8 py-4 font-label-sm text-label-sm uppercase tracking-widest hover:bg-secondary/90 transition-all">
+                        Join Weekend Batch
+                    </button>
+<button class="border border-primary text-primary px-8 py-4 font-label-sm text-label-sm uppercase tracking-widest hover:bg-primary hover:text-on-primary transition-all">
+                        Book a Consultation
+                    </button>
+</div>
+</div>
+<div class="md:col-span-6 mt-12 md:mt-0 fade-in-up visible">
+<div class="relative">
+<img alt="A serene woman practicing a slow, mindful yoga pose in a bright, minimalist studio filled with soft, natural morning light. The environment features earthy tones, soft textures, and a large window overlooking a misty garden, creating a sense of ethereal grounding and premium wellness." class="w-full h-[600px] object-cover asymmetric-clip" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdiQioRVc07duNHDyd2Kk40r_qMp9Wd87M_VgG_22iW5KDenPDrPM53Q8JDHDdekArgPzv4SwDf8UiRedDsoDt_5iR4vTFPmdkbixSxZ8IfNwfPKzR9Ug1BsbECdH0ejTQAKI-bYqPcoavUK8x5bg7Y1hrfKhIL8bhGhrPPbI_MUqyaLlvn6_XJNeYyHzp1Ws_qY86op0DeZuhRndQ3Mq6iIpmrbwvg8mPZtPb3uSacUqK0rrJVUD9lIZU7GWM4Opbj_Tkzn_wTGgZ">
+<div class="absolute -bottom-8 -left-8 bg-surface-container p-8 hidden md:block border border-outline/10">
+<p class="font-headline-md text-headline-md italic text-secondary">Slow living.</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Gentle movement.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section class="bg-surface-container-low py-16" id="about">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-12 items-center gap-24"><div class="md:col-span-7 fade-in-up visible">
+<div class="relative">
+<img alt="Yoga practitioner in a balanced warrior pose, capturing the essence of slow living and mindful movement" class="w-full object-cover rounded-xl shadow-xl border border-outline/5 aspect-[3/4]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDmm3veEVt3ipo3SxUWNHZnNVQUgGvBXX5E-_Y4tOzkX_i9u7rXhuqiCq-YbN7zDYx8eE4TIQVy3-EhTlUfa9J6aW_CU69KeD-mH8a287yT22KYlIbS1sSXRcRlRUpvOiowZEd_u8Mr3XGPPlYVhNExcX9GrJgakbVtfu9S5aB0KFPxh9VTs1KcJ6hvn5O1VjMyMN45px745BdkNEpU8nE8KAtLBNnItUzE5EWkjzlq1Wy4zdxR_4QLC6gbasGFeGiU8PJKZDtIxPq">
+<div class="absolute -bottom-4 -right-4 w-24 h-24 bg-secondary-container/30 rounded-full blur-2xl -z-10"></div>
+</div>
+</div><div class="md:col-span-5 space-y-6 fade-in-up visible md:pl-12">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary">thought behind this wellness space</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">Meet SakshiYoga</h2>
+<div class="space-y-4 max-w-xl">
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+            Nobody can deny the need for physical, mental and spiritual wellbeing in this fast and uptight life. Practicing Yoga helps you meet all this criteria.
+        </p>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            We believe wellness begins long before you step onto a yoga mat and continues long after you leave it. Through mindful movement, breath, and awareness, we help you cultivate flexibility, reconnect with your body, and feel both free and grounded. Wherever you are in your journey, Sakshi Yoga meets you there and together, we'll move towards a healthier, more balanced life.
+        </p>
+</div>
+</div></div>
+</div>
+</section>
+<!-- Weekend Batches -->
+<section class="py-section-gap" id="batches">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">SakshiYoga Batches</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto italic">Wellness designed for busy lives. Ideal for IT and Corporate professionals seeking a reset.</p>
+</div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="bg-surface-container-lowest p-12 border border-outline/5 fade-in-up visible">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary">Weekday sessions</span>
+<h3 class="font-headline-md text-headline-md mt-4 mb-6">Monday-Friday</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">A focused session to release tension, focusing on yoga and mindfulness.</p>
+<div class="flex items-center gap-4 text-primary font-label-sm text-label-sm mb-8">
+<span class="material-symbols-outlined">schedule</span>
+<span class="">05:00 PM to 06:00 PM</span>
+</div>
+<button class="w-full py-4 border border-outline-variant hover:bg-primary hover:text-on-primary transition-all font-label-sm text-label-sm uppercase">Register Now</button>
+</div>
+<div class="bg-primary-container p-12 text-on-primary-container fade-in-up visible">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary-fixed">Weekend sessions</span>
+<h3 class="font-headline-md text-headline-md mt-4 mb-6 text-white">Saturday &amp; Sunday</h3>
+<p class="font-body-md text-body-md opacity-80 mb-8">Deep relaxation through restorative poses and breathwork to prepare your mind for the week ahead.</p>
+<div class="flex items-center gap-4 text-secondary-fixed font-label-sm text-label-sm mb-8">
+<span class="material-symbols-outlined">schedule</span>
+<span class="">06:00 AM to 07:00 AM</span>
+</div>
+<button class="w-full py-4 bg-secondary-fixed text-on-secondary-fixed hover:opacity-90 transition-all font-label-sm text-label-sm uppercase">Register Now</button>
+</div>
+</div>
+</section>
+<!-- Services Bento -->
+<section class="py-section-gap bg-surface-dim" id="services">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-8 bg-surface p-12 flex flex-col justify-between fade-in-up visible">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary">01 / Beginners</span>
+<h3 class="font-headline-lg text-headline-lg text-primary mt-4 mb-6">Mind Your Mind</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md">Mindfulness Meditations to resolve agitations of mind in haphazardous situations</p>
+</div>
+<img alt="Soft, editorial photography of a person's hands resting in a meditative mudra, natural morning light, warm neutral tones, linen texture, calm and focused atmosphere for breathwork." class="w-full h-48 object-cover mt-12 opacity-80 hover:opacity-100 transition-opacity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzUxl5qP8vxxEX8pftovvQBjvRfyAk1_FuS2MWDOAf3NPmavFu1ILtAwewoS_C382UDtT_OQD8ZWcG17FMZRQmovw2DjgRZaHgMAvTzIeC4WGWCkown_c1RBnZk50db2B-pWcYaSFlKFpfIV7plm0feeSl42WnM-SKBjOL5M-9bdzjhuefUkZ4nntKJINbj3iNJ5lHm1PuSe69ZqatAsi3DRrrSVEOH1tvnFqlAcB7GYNs_NnOV4LKczObMaLR7PU3SOrURY0Ez1hQ">
+</div>
+<div class="md:col-span-4 bg-secondary-container p-12 fade-in-up visible">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-secondary-container">02 / Support</span>
+<h3 class="font-headline-md text-headline-md text-primary mt-4 mb-6">PCOD/PCOS Support</h3>
+<p class="font-body-md text-body-md text-on-secondary-container mb-8">Targeted yoga sequences to support hormonal health and alleviate symptoms through gentle movement.</p>
+</div>
+<div class="md:col-span-4 bg-tertiary-container text-on-tertiary-container p-12 fade-in-up visible">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-tertiary-fixed">03 / Breathwork</span>
+<h3 class="font-headline-md text-headline-md mt-4 mb-6">Day-to-Day Health</h3>
+<p class="font-body-md text-body-md opacity-80">Practices to ensure enthusiasm outside &amp; calm and compuse to the inner core</p>
+</div>
+<div class="md:col-span-8 bg-surface-container-high p-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-center fade-in-up visible">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary">04 / Senior Care</span>
+<h3 class="font-headline-md text-headline-md text-primary mt-4 mb-4">Senior Mobility</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Maintaining joint health and stability with age-appropriate gentle yoga.</p>
+</div>
+<img alt="Gentle, supportive yoga for seniors, soft-focus photography of a calm older adult in a seated yoga pose, warm indoor lighting, oatmeal and taupe color palette, peaceful and inclusive wellness vibe." class="w-full h-64 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDD8ZGY6CMrYebtUmI8VKWaNYTh8ShtJUP0a8OyVzO0QkR7g9SfbzhEJ_inaZdMopSHfNmq1Blt5YOxDc8SRkWG0L9EUTaiRGFjEEfqRETC74AgqHP9Iuc0q5nUlQhAqOyIkZE3qTKQxMLlSSpBiLyG9hGuOzlkeKDq5kuM8JinuWjWOshk6iHY3a3Rsmq0v92BkVkIh8BYPZCi-gR9qM5wXjpUarCmLJiWMRTxWRmyDLEfVgKlTyW9Pu-ko8fC6WOvijxuce82g-vd">
+</div>
+</div>
+</div>
+</section>
+<!-- Women's Wellness -->
+<section class="py-section-gap relative" id="wellness">
+<div class="absolute inset-0 bg-secondary-fixed/20 -z-10"></div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex flex-col md:flex-row gap-16 items-center">
+<div class="w-full md:w-1/2 fade-in-up visible">
+<div class="p-4 border border-secondary-container bg-surface relative">
+<img alt="Close-up of a person's hands resting peacefully on their lap during meditation. The skin tones are soft and the surrounding fabrics are in shades of blush and nude pink, creating a premium, feminine atmosphere focused on hormonal balance and body awareness." class="w-full h-[500px] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDv70skhAD8-LKfrqgGF20fhfG9Iv8tcaVv-fkCtEv8mzBTuhIeMeVhTry5zEIjuID_5pAQDh5phY5FVgIqEOP40xaPuFpG4sDZXuAg14k1vndh33ByD2wU2zWtGTqydRlTHx93QWaqCIvDDGbeToUq5oxUSeJclWu9rSYT7MVNc5z8XAmlt0Xyp3sbPSHFtsrHio9_QHkhxmDdpscQdFuXPRZIXTwi30QOmAwmnLPQtWSqnxNAWMhnWbdXpBDmCr-00LxN20s7N9Sw">
+<div class="absolute -top-6 -right-6 w-32 h-32 bg-secondary-container/50 rounded-full blur-3xl"></div>
+</div>
+</div>
+<div class="w-full md:w-1/2 space-y-8 fade-in-up visible">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary">Dedicated Space</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">Women's Wellness &amp; Balance</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                        Our cycles are our strength. This premium section is dedicated to practices that honor the feminine journey, from hormonal balance to deep body awareness.
+                    </p>
+<ul class="space-y-4 font-body-md text-body-md text-on-surface-variant">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: &quot;FILL&quot; 1;">circle</span>
+                            Cycle-synced movement practices
+                        </li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: &quot;FILL&quot; 1;">circle</span>
+                            Pelvic floor strengthening</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: &quot;FILL&quot; 1;">circle</span>
+                            Emotional resilience through soft flows
+                        </li>
+</ul>
+<button class="bg-secondary text-on-secondary px-10 py-4 font-label-sm text-label-sm uppercase tracking-widest hover:bg-primary transition-all">Explore the Program</button>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ -->
+<section class="py-section-gap bg-surface">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-4 fade-in-up visible">
+<h2 class="font-headline-lg text-headline-lg text-primary">Common Concerns</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-4">Transparent answers for your wellness journey.</p>
+</div>
+<div class="md:col-span-8 space-y-4 fade-in-up visible">
+<div class="border-b border-outline-variant py-6 cursor-pointer group" onclick="this.classList.toggle('active')">
+<div class="flex justify-between items-center">
+<h4 class="font-body-lg text-body-lg text-primary">I've never done yoga before. Is this for me?</h4>
+<span class="material-symbols-outlined text-secondary transition-transform group-[.active]:rotate-180">expand_more</span>
+</div>
+<div class="hidden group-[.active]:block mt-4 text-on-surface-variant font-body-md">
+                            Absolutely. Most of my students start exactly where you are. We prioritize slow, explained movements and offer modifications for every body type.
+                        </div>
+</div>
+<div class="border-b border-outline-variant py-6 cursor-pointer group" onclick="this.classList.toggle('active')">
+<div class="flex justify-between items-center">
+<h4 class="font-body-lg text-body-lg text-primary">What if I have limited mobility or chronic pain?</h4>
+<span class="material-symbols-outlined text-secondary transition-transform group-[.active]:rotate-180">expand_more</span>
+</div>
+<div class="hidden group-[.active]:block mt-4 text-on-surface-variant font-body-md">
+                            Our sessions are highly adaptive. We use props and modifications to ensure every movement is safe and supportive for your specific body needs.
+                        </div>
+</div>
+<div class="border-b border-outline-variant py-6 cursor-pointer group active" onclick="this.classList.toggle('active')">
+<div class="flex justify-between items-center">
+<h4 class="font-body-lg text-body-lg text-primary">Do I need to be flexible to start?</h4>
+<span class="material-symbols-outlined text-secondary transition-transform group-[.active]:rotate-180">expand_more</span>
+</div>
+<div class="hidden group-[.active]:block mt-4 text-on-surface-variant font-body-md">
+                            Not at all. Yoga is the tool to build flexibility, not a prerequisite. We focus on functional movement that meets you exactly where you are.
+                        </div>
+</div>
+<div class="border-b border-outline-variant py-6 cursor-pointer group active" onclick="this.classList.toggle('active')">
+<div class="flex justify-between items-center">
+<h4 class="font-body-lg text-body-lg text-primary"><div class="">Can we practice yoga during menstrual phase?</div></h4>
+<span class="material-symbols-outlined text-secondary transition-transform group-[.active]:rotate-180">expand_more</span>
+</div>
+<div class="hidden group-[.active]:block mt-4 text-on-surface-variant font-body-md"><div class="">No, we need to take rest and enjoy with awareness. You can resume yoga from fifth day&nbsp; of your menstruation.</div></div>
+</div>
+<div class="border-b border-outline-variant py-6 cursor-pointer group active" onclick="this.classList.toggle('active')">
+<div class="flex justify-between items-center">
+<h4 class="font-body-lg text-body-lg text-primary">Do you offer one-on-one sessions?</h4>
+<span class="material-symbols-outlined text-secondary transition-transform group-[.active]:rotate-180">expand_more</span>
+</div>
+<div class="hidden group-[.active]:block mt-4 text-on-surface-variant font-body-md">
+                            Yes, specifically for health concerns like PCOD or recovery. You can book a consultation to discuss a personalized plan.
+                        </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-section-gap relative overflow-hidden">
+<div class="absolute inset-0 -z-10 bg-surface-container-high transition-colors duration-[3000ms]" id="cta-bg" style="background-color: rgb(245, 218, 209);"></div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center fade-in-up visible">
+<h2 class="font-display-lg text-display-lg text-primary mb-8">
+                Your wellness journey doesn't need to begin perfectly.
+            </h2>
+<p class="font-headline-md text-headline-md text-secondary italic mb-12">It just needs to begin.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-6">
+<button class="bg-primary text-on-primary px-12 py-5 font-label-sm text-label-sm uppercase tracking-widest hover:opacity-90 transition-all">
+                    Apply for Next Batch
+                </button>
+<button class="bg-transparent border border-primary text-primary px-12 py-5 font-label-sm text-label-sm uppercase tracking-widest hover:bg-primary hover:text-on-primary transition-all">
+                    Connect
+                </button>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full py-section-gap bg-surface-container-lowest border-t border-outline-variant/10">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="md:col-span-4 space-y-6">
+<div class="flex items-center gap-2">
+<img alt="Sakshi Yoga Logo" class="h-8 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBchkveJyGBkVyMTC5GxFIgbBf9pkhhESA2qfc62LmrXDAll8_6pg0VZ60lU_0c5H-ykoox4xPc6j1_ZBnGPbL7CwQFUwe-oloO4_EmL5faS_PzITpurntJAfhxdC-4nlYWNVRUCLAjLBgCveLpPaFQ7WGk6kaho1WoLNhFB3BHOTc-cqr3ZuRyardWX3DuOudPNCXKMrdRUTBOzuJ5BCG7qbbwnzM_lz3Xfgn-g1p4Uagi9AkkIe8K5zqevcO1HawncZP9aMFRObYz">
+<span class="font-headline-md text-headline-md text-primary">Sakshi Yoga</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xs">
+                    Slow living. Gentle movement. Conscious wellness. A sanctuary for the modern soul.
+                </p>
+</div>
+<div class="md:col-span-2 space-y-4">
+<h5 class="font-label-sm text-label-sm text-primary uppercase">Practice</h5>
+<ul class="space-y-2 font-body-md text-body-md text-on-surface-variant">
+<li class=""><a class="hover:text-primary transition-colors" href="#">About</a></li>
+<li class=""><a class="hover:text-primary transition-colors" href="#">Batches</a></li>
+<li class=""><a class="hover:text-primary transition-colors" href="#">Services</a></li>
+<li class=""><a class="hover:text-primary transition-colors" href="#">Philosophy</a></li>
+</ul>
+</div>
+<div class="md:col-span-2 space-y-4">
+<h5 class="font-label-sm text-label-sm text-primary uppercase">Connect</h5>
+<ul class="space-y-2 font-body-md text-body-md text-on-surface-variant">
+<li class=""><a class="hover:text-primary transition-colors" href="#">Wellness Journal</a></li>
+<li class=""><a class="hover:text-primary transition-colors" href="#">Contact</a></li>
+<li class=""><a class="hover:text-primary transition-colors" href="#">Instagram</a></li>
+</ul>
+</div>
+<div class="md:col-span-4 space-y-4">
+<h5 class="font-label-sm text-label-sm text-primary uppercase">Stay Mindful</h5>
+<p class="font-body-md text-body-md text-on-surface-variant">Gentle notes on wellness in your inbox.</p>
+<div class="flex border-b border-outline">
+<input class="bg-transparent border-none focus:ring-0 w-full font-body-md text-on-surface-variant placeholder:text-outline" placeholder="Email Address" type="email">
+<button class="p-2 text-primary">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="md:col-span-12 pt-12 border-t border-outline/10 flex flex-col md:flex-row justify-between gap-4">
+<p class="font-label-sm text-label-sm text-on-surface-variant"> © 2026 Sakshi Yoga. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary" href="#">Privacy</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary" href="#">Terms</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Intersection Observer for scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
+
+        // Background color transition for final CTA
+        const colors = ['#fdf9f5', '#f1ede9', '#f5dad1', '#e8d3cd'];
+        let colorIndex = 0;
+        const ctaBg = document.getElementById('cta-bg');
+        
+        setInterval(() => {
+            if (ctaBg) {
+                ctaBg.style.backgroundColor = colors[colorIndex];
+                colorIndex = (colorIndex + 1) % colors.length;
+            }
+        }, 3000);
+
+        // Sticky Navbar adjustment on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-sm', 'py-4');
+                nav.classList.remove('py-6');
+            } else {
+                nav.classList.remove('shadow-sm', 'py-4');
+                nav.classList.add('py-6');
+            }
+        });
+    </script>
+
+
+
+
+</body></html>
