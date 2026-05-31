@@ -9,7 +9,7 @@ export default function AboutSection() {
           <Reveal className="md:col-span-7">
             <div className="relative">
               <img
-                alt="Yoga practitioner in a balanced warrior pose, capturing the essence of slow living and mindful movement"
+                alt="Vd. Aparna Utpat speaking at a yoga teachers continuing medical education event"
                 className="aspect-[3/4] w-full rounded-xl border border-outline/5 object-cover shadow-xl"
                 src={imageUrls.about}
               />
@@ -19,19 +19,33 @@ export default function AboutSection() {
 
           <Reveal className="space-y-6 md:col-span-5 md:pl-12">
             <span className="font-label-sm text-label-sm uppercase tracking-widest text-secondary">
-              thought behind this wellness space
+              Person Behind This Wellness Space
             </span>
-            <h2 className="font-headline-lg text-headline-lg text-primary">Meet SakshiYoga</h2>
+            <h2 className="font-headline-lg text-headline-lg text-primary">Meet Vd. Aparna Utpat</h2>
             <div className="max-w-xl space-y-4">
               <p className="font-body-lg text-body-lg text-on-surface-variant">
-                Nobody can deny the need for physical, mental and spiritual wellbeing in this fast and uptight life.
-                Practicing Yoga helps you meet all this criteria.
+                My journey with yoga began as a path to create balance, awareness, and inner strength within myself.
+                Over time, I experienced how yoga has the power to transform not just the body, but also the mind and
+                spirit. This inspired me to create Sakshi Yoga a space where individuals can reconnect with themselves,
+                cultivate mindfulness, and embrace a healthier way of living.
               </p>
               <p className="font-body-md text-body-md text-on-surface-variant">
-                We believe wellness begins long before you step onto a yoga mat and continues long after you leave it.
-                Through mindful movement, breath, and awareness, we help you cultivate flexibility, reconnect with your
-                body, and feel both free and grounded. Wherever you are in your journey, Sakshi Yoga meets you there and
-                together, we'll move towards a healthier, more balanced life.
+                At Sakshi Yoga, I believe wellness begins long before you step onto a yoga mat and continues long after
+                your practice ends. Through mindful movement, conscious breathing, and self-awareness, my goal is to help
+                you develop flexibility, build resilience, and find a deeper sense of peace and balance in your daily
+                life.
+              </p>
+              <p className="font-body-md text-body-md text-on-surface-variant">
+                Whether you are taking your very first step into yoga or continuing an existing practice, I welcome you
+                with an open heart. Wherever you are in your wellness journey, I look forward to supporting and guiding
+                you towards a life that feels healthier, calmer, and more aligned.
+              </p>
+              <p className="font-body-md text-body-md text-on-surface-variant">
+                - Vd. Aparna Utpat
+                <br />
+                BAMS, MSc. Yoga
+                <br />
+                Founder, Sakshi Yoga
               </p>
             </div>
           </Reveal>
