@@ -67,9 +67,7 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col justify-between gap-4 border-t border-outline/10 pt-12 md:col-span-12 md:flex-row">
-          <p className="font-label-sm text-label-sm text-on-surface-variant">
-            {"\u00a9"} 2026 Sakshi Yoga. All rights reserved.
-          </p>
+          <p className="font-label-sm text-label-sm text-on-surface-variant"> © 2026 Sakshi Yoga. All rights reserved.</p>
           <div className="flex gap-6">
             <a className="font-label-sm text-label-sm text-on-surface-variant hover:text-primary" href="#">
               Privacy
