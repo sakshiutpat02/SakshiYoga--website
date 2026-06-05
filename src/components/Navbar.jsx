@@ -19,7 +19,10 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleButtonClick = () => {};
+  const scrollToBatches = () => {
+    document.getElementById("batches")?.scrollIntoView({ behavior: "smooth" });
+    setIsOpen(false);
+  };
 
   return (
     <nav
@@ -48,7 +51,7 @@ export default function Navbar() {
             className="bg-secondary px-6 py-2 font-label-sm text-label-sm text-on-secondary transition-opacity hover:opacity-90"
             type="button"
             aria-label="Connect with Sakshi Yoga"
-            onClick={handleButtonClick}
+            onClick={scrollToBatches}
           >
             Connect
           </button>
@@ -82,7 +85,7 @@ export default function Navbar() {
               className="w-full bg-secondary px-6 py-3 font-label-sm text-label-sm text-on-secondary transition-opacity hover:opacity-90"
               type="button"
               aria-label="Connect with Sakshi Yoga"
-              onClick={handleButtonClick}
+              onClick={scrollToBatches}
             >
               Connect
             </button>
